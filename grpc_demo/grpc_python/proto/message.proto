@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package=".;proto";
+
+message UserRequest {
+  string name =1 ;
+}
+
+message UserResponse {
+  string name =1;
+  int64 id =2;
+  int64 age =3;
+  repeated string hobby = 4;
+}
+
+service ServiceUser {
+  rpc GetUserInfo (UserRequest) returns (UserResponse);
+}

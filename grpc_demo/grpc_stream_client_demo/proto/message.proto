@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package=".;proto";
+
+message OrderRequest {
+  string orderId =1;
+  int64 timeTmp = 2;
+}
+
+message OrderInfo {
+  string orderName = 1;
+  string orderId =2;
+  string orderStatus =3;
+}
+
+service OrderService {
+  rpc AddOrderList(stream OrderRequest) returns (OrderInfo);
+}
+

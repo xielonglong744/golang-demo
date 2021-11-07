@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package=".;proto";
+
+message ArgRequest {
+  int64 arg1 =1 ;
+  int64 arg2 =2;
+}
+
+message MathResp {
+  int64 resp =1;
+}
+
+service ServiceMath {
+  rpc  GetRes (ArgRequest)  returns (MathResp);
+}

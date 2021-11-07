@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package address;
+option go_package="./";
+
+enum GenderType {
+    SECRET = 0;
+    FEMALE = 1;
+    MALE = 2;
+}
+
+message Person {
+    int64 id = 1;
+    string name =2;
+    GenderType gender = 3;
+    string number = 4;
+}
+
+message ContackBook {
+    repeated Person persons = 1;
+}
